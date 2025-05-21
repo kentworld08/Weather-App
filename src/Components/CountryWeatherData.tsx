@@ -70,24 +70,29 @@ export const CountryWeatherData = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen w-full bg-purple-900">
+    <div className="flex flex-col items-center min-h-screen w-full bg-purple-900 p-5">
       <div className="w-full items-center justify-center flex my-20">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex gap-5 items-center"
+          className="flex flex-col sm:flex-row gap-5 items-center"
         >
           <div>
             <input
               type="text"
               placeholder="Country"
               {...register("country", { required: true })}
-              className="w-xs border-2 p-2 px-4 text-white rounded-full text-2xl"
+              className="sm:w-xs border-2 p-2 px-4 text-white rounded-full text-2xl"
             />
             {errors.country && (
               <p className="text-red-600">This field requires a country name</p>
             )}
           </div>
-          <Button type="submit">Submit</Button>
+          <Button
+            type="submit"
+            className="max-sm:px-10 max-sm:rounded-full text-base"
+          >
+            Submit
+          </Button>
         </form>
       </div>
 
